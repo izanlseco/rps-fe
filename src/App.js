@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+
+import NavBar from './components/molecules/NavBar'
+import Home from './components/organisms/Home'
+import GlobalScore from './components/molecules/GlobalScore'
+import Footer from './components/molecules/Footer'
+
+const App = () => {
+  const [result, setResult] = useState(null)
+  const [error, setError] = useState(null)
+  const [counter, setCounter] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home
+                      result={result}
+                      setResult={setResult}
+                      error={error}
+                      setError={setError}
+                      counter={counter}
+                      setCounter={setCounter}
+                    />}
+        />
+        <Route
+          path="/score"
+          element={<GlobalScore />}
+        />
+      </Routes>
+      <Footer />
+    </Router>
+  )
 }
 
-export default App;
+export default App
