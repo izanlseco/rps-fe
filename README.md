@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+## Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As both front-end and back-end are deployed on the same machine, you have to use an extension like CORS on your browser in order to have them working together.
+
+Make sure that you have typed `npm install` before doing a `npm test` or `npm start` so all the dependencies are installed in your local machine.
+
+Also, in order to communicate with the API, you have to start the API beforehand (which you have previously downloaded in the rps-be repo) using your IDE.
 
 ## Available Scripts
 
