@@ -9,7 +9,7 @@ import Control from '../../molecules/Control'
 const Home = ({ result, setResult, error, setError, counter, setCounter }) => {
   const playRound = () => {
     axios
-      .get("http://localhost:8080/play")
+      .post('http://localhost:8080/play', {})
       .then(response => setResult(response.data))
       .catch(setError)
     setCounter(counter + 1)
