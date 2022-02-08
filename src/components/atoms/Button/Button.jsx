@@ -4,7 +4,6 @@ const Button = ({text, onClick}) => {
   return (
     <button
       className="button"
-      role="button"
       onClick={onClick}
     >
       {text}
